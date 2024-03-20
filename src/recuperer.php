@@ -8,6 +8,7 @@
     try {
         // Connexion à la base de données avec PDO
         $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+
         // Configuration de PDO pour afficher les exceptions en cas d'erreur
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
@@ -25,9 +26,10 @@
         
         // Vérification s'il y a des résultats
         if (count($messages) > 0) {
+
             // Affichage des messages
             foreach ($messages as $message) {
-                echo "Contenu: " . $message["contenu"] . " - Pseudo: " . $message["userPseudo"] . " - Horaire: " . $message["horaire"] . "<br>";
+                echo $message["userPseudo"]." at ".$message["horaire"]."<br>".$message["contenu"]."<br>";
             }
         } else {
             echo "Aucun message trouvé.";
