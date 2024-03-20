@@ -15,11 +15,12 @@
             $connection = new PDO("mysql:host=$server;dbname=$db", $login, $mdp);
 
             try{
-                $query = $connection->prepare("INSERT INTO messages(contenu, userPseudo, horaire) VALUES(:phrase, :pseudo, :heure)");
+                $query = $connection->prepare("INSERT INTO chatjs(contenu, userPseudo, horaire) VALUES(:phrase, :pseudo, :heure)");
 
                 $query->bindparam(':phrase', $phrase);
                 $query->bindparam(':pseudo', $pseudo);
-                $query->bindparam(':heure', now());
+                $currentDateTime = date('Y-m-d H:i:s');
+                $query->bindparam(':heure', $currentDateTime);
 
                 $query->execute();
             }catch(PDOException $e){
