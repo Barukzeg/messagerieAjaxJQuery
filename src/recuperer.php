@@ -29,7 +29,7 @@
 
             // Affichage des messages
             foreach ($messages as $message) {
-                echo $message["userPseudo"]." at ".$message["horaire"]."<br>".$message["contenu"]."<br>";
+                echo $message["userPseudo"]." at ".$message["horaire"]."<br>".$message["contenu"]."<hr>";
             }
         } else {
             echo "Aucun message trouvé.";
