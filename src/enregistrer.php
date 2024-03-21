@@ -19,8 +19,10 @@
 
                 $query->bindparam(':phrase', $phrase);
                 $query->bindparam(':pseudo', $pseudo);
-                $currentDateTime = date('Y-m-d H:i:s');
-                $query->bindparam(':heure', $currentDateTime);
+
+                $heure = date('Y-m-d H:i:s');
+                $query->bindparam(':heure', $heure);
+
 
                 $query->execute();
             }catch(PDOException $e){
