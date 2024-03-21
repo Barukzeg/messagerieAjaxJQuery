@@ -13,7 +13,7 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // Requête SQL pour récupérer les 10 derniers messages
-        $sql = "SELECT contenu, userPseudo, horaire FROM chatJS ORDER BY idMessage DESC LIMIT 10";
+        $sql = "SELECT idMessage, contenu, userPseudo, horaire FROM chatJS ORDER BY idMessage DESC LIMIT 10";
         
         // Préparation de la requête
         $stmt = $conn->prepare($sql);
@@ -22,18 +22,10 @@
         $stmt->execute();
         
         // Récupération des résultats
-        $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $resultat = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        // Vérification s'il y a des résultats
-        if (count($messages) > 0) {
-
-            // Affichage des messages
-            foreach ($messages as $message) {
-                echo $message["userPseudo"]." at ".$message["horaire"]."<br>".$message["contenu"]."<hr>";
-            }
-        } else {
-            echo "Aucun message trouvé.";
-        }
+        header('Content-Type: application/json');
+        echo json_encode($resultat);
     } catch(PDOException $e) {
         echo "Erreur de connexion: " . $e->getMessage();
     }
