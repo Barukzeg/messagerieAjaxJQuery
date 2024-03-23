@@ -13,7 +13,7 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // Requête SQL pour récupérer les 10 derniers messages
-        $sql = "SELECT idMessage, contenu, userPseudo, horaire FROM chatJS ORDER BY idMessage DESC LIMIT 10";
+        $sql = "SELECT idMessage, contenu, userPseudo, FROM_UNIXTIME(horaire) as horaire FROM chatJS ORDER BY idMessage DESC LIMIT 10";
         
         // Préparation de la requête
         $stmt = $conn->prepare($sql);
