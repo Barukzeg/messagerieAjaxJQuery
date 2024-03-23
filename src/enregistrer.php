@@ -20,7 +20,7 @@
                 $query->bindparam(':phrase', $phrase);
                 $query->bindparam(':pseudo', $pseudo);
 
-                $heure = date('Y-m-d H:i:s');
+                $heure = time();
                 $query->bindparam(':heure', $heure);
 
 
