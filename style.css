@@ -1,67 +1,16 @@
-body {
+html{
     font-family: Arial, sans-serif;
 }
 
-.input {
-    margin-bottom: 10px;
-}
-
-#top{
-    display: flex;
-}
-
-#top h1 {
-    margin-right: 10px;
-}
-
-.input form {
-    display: flex;
-}
-
-.input input[type="text"],
-.input input[type="submit"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.liste-messages {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    overflow-y: auto;
-}
-
-.liste-messages span {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#input-text {
+body{
     position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-top: 1px solid #ccc;
 }
 
-#input-text input[type="text"] {
-    flex: 1;
-    margin-right: 10px;
+.input-pseudo{
+    top: 0;
 }
 
-#input-text input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
+.input-message{
+    bottom: 0;
 }
