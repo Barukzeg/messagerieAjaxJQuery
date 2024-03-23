@@ -24,7 +24,9 @@
                     if(!(listId.includes(message['idMessage']))){
                         console.log("id du dernier message : " + message['idMessage']);
                         console.log("liste des id : " + listId);
-                        $(".messages").append("<hr>");
+                        if (!(index === 0)){
+                            $(".messages").append("<hr>");
+                        }
                         $(".messages").append("<strong>" + message['userPseudo'] + "</strong> : "+message['horaire']+"<br> " + message['contenu']);
                         listId.push(message['idMessage']);
                     }
