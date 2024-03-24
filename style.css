@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    overflow-y: unset;
+    background-color: #cbcbcb;
+    color: rgb(0, 0, 0);
+}
+
+.liste-messages{
+    margin-top: 100px;
+}
+
+.display-messages {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    height: 520px;
+    overflow-y: scroll;
+}
+
+.display-messages hr {
+    margin: 10px 0;
+}
+
+.display-messages span {
+    color: rgb(0, 0, 0);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #dbdbdb;
+    padding: 10px;
+}
+
+.input-pseudo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #dbdbdb;
+    display: flex;
+}
+
+
+.input-pseudo input[type="text"] {
+    width: 20%;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.input-message input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.input-message button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    right: 0;
+    border-radius: 4px;
+}
+
+.input-message button:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
