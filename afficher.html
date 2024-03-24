@@ -50,12 +50,16 @@
         $(document).ready(function(){
             // Envoi du message lors du click sur le bouton Envoyer
             $("#envoyer").click(function(){
-                enregistrerMessage();
+                if($("#pseudo").val() != "" && $("#message").val() != ""){
+                    enregistrerMessage();
+                }
             });
             // Envoi du message lors de l'appui sur la touche Entrée
             $("#message").keyup(function(e){
                 if(e.keyCode == 13){
-                    enregistrerMessage();
+                    if($("#pseudo").val() != "" && $("#message").val() != ""){
+                        enregistrerMessage();
+                    }
                 }
             });
         });
