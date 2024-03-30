@@ -6,6 +6,7 @@
     $database = "messagerie";
 
     try {
+
         // Connexion à la base de données avec PDO
         $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 
@@ -13,10 +14,10 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // Requête SQL pour récupérer les 10 derniers messages
-        $sql = "SELECT idMessage, contenu, userPseudo, FROM_UNIXTIME(horaire) as horaire FROM chatJS ORDER BY idMessage DESC LIMIT 10";
+        $query = "SELECT idMessage, contenu, userPseudo, FROM_UNIXTIME(horaire) as horaire FROM chatJS ORDER BY idMessage DESC LIMIT 10";
         
         // Préparation de la requête
-        $stmt = $conn->prepare($sql);
+        $stmt = $conn->prepare($query);
         
         // Exécution de la requête
         $stmt->execute();
@@ -26,8 +27,8 @@
         
         header('Content-Type: application/json');
         echo json_encode($resultat);
+
     } catch(PDOException $e) {
         echo "Erreur de connexion: " . $e->getMessage();
     }
-
 ?>

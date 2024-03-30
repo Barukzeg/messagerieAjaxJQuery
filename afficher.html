@@ -10,9 +10,11 @@
 
         // Fonction d'envoi du message
         function enregistrerMessage(){
+
             // Recupere le pseudo et le message dans les inputs
             var pseudo = $("#pseudo").val();
             var phrase = $("#message").val();
+
             // Envoi des données à enregistrer.php
             $.get("src/enregistrer.php", {pseudo: pseudo, phrase: phrase}, function(data){
                 $("#message").val(''); // Efface le champ de saisie
@@ -22,10 +24,13 @@
         // Fonction de récupération et d'affichage des messages
         // Avec listId en paramètre qui contient les id des messages déjà affichés
         function recupererMessages(listId){
+
             // Récupération des messages
             $.getJSON("src/recuperer.php", function(data){
+
                 // Parcours des messages en sens inverse
                 $.each(data.reverse(), function(index, message){
+
                     // Si le message n'est pas déjà affiché
                     if(!(listId.includes(message['idMessage']))){
 
@@ -37,8 +42,9 @@
                         // Affichage de chaque message
                         var date = new Date(message['horaire']);
                         str = date.toLocaleString();
-                        $(".messages").append("<strong>" + message['userPseudo'] + "</strong> : "+ str +"<br>" + message['contenu']);
+                        $(".messages").append("<strong>" + message['userPseudo'] + "</strong> le <em>"+ str +" :</em> <br><br>" + message['contenu'] + "<br>");
                         listId.push(message['idMessage']);
+
                         // Scroll automatique vers le bas du bloc
                         document.getElementById('msg').scrollBy(0, 1000);
                     }
@@ -46,17 +52,21 @@
             })
         }
 
-
         $(document).ready(function(){
+
             // Envoi du message lors du click sur le bouton Envoyer
             $("#envoyer").click(function(){
+
                 if($("#pseudo").val() != "" && $("#message").val() != ""){
                     enregistrerMessage();
                 }
             });
+
             // Envoi du message lors de l'appui sur la touche Entrée
             $("#message").keyup(function(e){
+
                 if(e.keyCode == 13){
+
                     if($("#pseudo").val() != "" && $("#message").val() != ""){
                         enregistrerMessage();
                     }
@@ -74,7 +84,7 @@
 </head>
 <body>
     <div class="input-pseudo">
-        <h5>Pseudonyme : </h2>
+        <h4>Pseudonyme : </h4>
         <input type="text" name="pseudo" id="pseudo" placeholder="Entrez votre pseudo">
     </div>
     <div class="liste-messages">
@@ -85,7 +95,7 @@
     </div>
     <div class="input-message">
         <input type="text" name="message" id="message" placeholder="Entrez votre message">
-        <button id="envoyer">Envoyer</button>
+        <button id="envoyer"><strong>Envoyer</strong></button>
     </div>
 </body>
 </html>
