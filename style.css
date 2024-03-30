@@ -1,80 +1,115 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     margin: 10px;
     padding: 0;
     overflow-y: unset;
-    background-color: #cbcbcb;
+    background-color: #9897dd;
     color: rgb(0, 0, 0);
 }
 
-.liste-messages{
-    margin-top: 100px;
+/************ Style pour l'entrée de pseudos en haut de page ************/
+
+.input-pseudo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    padding-left: 15px;
+    background-color: #2e295c;
+    display: flex;
+    justify-content: left;
 }
+
+    .input-pseudo h4 {
+        font-family: 'Tahoma';
+        color: #9a99e2;
+    }
+
+    .input-pseudo input[type="text"] {
+        width: 20%;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #000000;
+        background-color: #cac9f5;
+        border-radius: 4px;
+    }
+
+/************ Style pour le bloc qui contient l'affichage des messages ************/
+
+.liste-messages {
+    position: absolute;
+    top: 100px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background-color: #695bbb;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+/************ Style pour l'affichage des messages ************/
 
 .display-messages {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: #9897dd;
+    border-radius: 10px;
     padding: 10px;
-    height: 520px;
-    overflow-y: scroll;
+    height: 96%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    scrollbar-color: #3f347c #9897dd;
 }
 
-.display-messages hr {
-    margin: 10px 0;
-}
+    .display-messages hr {
+        margin: 10px 0;
+        height: 2px;
+        background-color: #3f347c;
+        border: none;
+    }
 
-.display-messages span {
-    color: rgb(0, 0, 0);
-    display: block;
-    margin-bottom: 5px;
-}
+    .display-messages strong {
+        font-family: 'Tahoma';
+    }
+
+    .display-messages span {
+        color: rgb(0, 0, 0);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+/************ Style pour l'entrée de message en bas de page ************/
 
 .input-message {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #dbdbdb;
+    background-color: #2e295c;
     padding: 10px;
 }
 
-.input-pseudo{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #dbdbdb;
-    display: flex;
-}
+    .input-message input[type="text"] {
+        width: 88%;
+        padding: 10px;
+        border: 1px solid #000000;
+        background-color: #cac9f5;
+        border-radius: 4px;
+    }
 
+    .input-message button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        right: 0;
+        border-radius: 4px;
+        font-family: 'Tahoma';
+        width: 8%;
+        margin-left: 5px;
+    }
 
-.input-pseudo input[type="text"] {
-    width: 20%;
-    margin-left: 10px;
-    padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 4px;
-}
-
-.input-message input[type="text"] {
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 4px;
-}
-
-.input-message button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    right: 0;
-    border-radius: 4px;
-}
-
-.input-message button:hover {
-    background-color: #45a049;
-    cursor: pointer;
-}
+    .input-message button:hover {
+        background-color: #45a049;
+        cursor: pointer;
+    }
