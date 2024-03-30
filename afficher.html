@@ -57,7 +57,7 @@
             // Envoi du message lors du click sur le bouton Envoyer
             $("#envoyer").click(function(){
 
-                if($("#pseudo").val() != "" && $("#message").val() != ""){
+                if($("#pseudo").val().trim() != "" && $("#message").val().trim() != ""){
                     enregistrerMessage();
                 }
             });
@@ -67,7 +67,7 @@
 
                 if(e.keyCode == 13){
 
-                    if($("#pseudo").val() != "" && $("#message").val() != ""){
+                    if($("#pseudo").val().trim() != "" && $("#message").val().trim() != ""){
                         enregistrerMessage();
                     }
                 }
