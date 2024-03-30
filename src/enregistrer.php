@@ -19,7 +19,7 @@
             try {
 
                 //Requete d'insertion
-                $query = $connection->prepare("INSERT INTO chatjs(contenu, userPseudo, horaire) VALUES(:phrase, :pseudo, :heure)");
+                $query = $connection->prepare("INSERT INTO chatJS(contenu, userPseudo, horaire) VALUES(:phrase, :pseudo, :heure)");
 
                 $query->bindparam(':phrase', $phrase);
                 $query->bindparam(':pseudo', $pseudo);
